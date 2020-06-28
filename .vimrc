@@ -1,5 +1,5 @@
 set nocompatible
-filetype off
+filetype plugin on 
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -112,12 +112,10 @@ set mouse=a  " on OSX press ALT and click
 set bs=2 " make backspace normal
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost ~/.vimrc source %
 
 " Showing line numbers and length
-"" set tw=79   " width of document (used by gd)
 "" set nowrap  " don't automatically wrap on load
-"" set fo-=t   " don't automatically wrap text when typing
 "" set colorcolumn=80
 "" highlight ColorColumn ctermbg=233
 

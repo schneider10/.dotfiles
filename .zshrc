@@ -110,8 +110,8 @@ alias restart="sudo shutdown -r now"
 
 alias s=google
 alias v=vim
-alias vs="vim ~/.dotfiles/.vimsettings"
-alias z="vim ~/.dotfiles/.zshsettings"
+alias vs="vim ~/.dotfiles/.vimrc"
+alias z="vim ~/.dotfiles/.zshrc"
 alias G="cd ~/Google\ Drive"
 alias job="G; cd career; vim job_search.txt"
 alias o="open ."
