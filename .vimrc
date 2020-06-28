@@ -26,7 +26,6 @@ Plugin 'nvie/vim-flake8'
 Plugin 'plasticboy/vim-markdown'
 
 " File viewer/finder
-Plugin 'scrooloose/nerdtree'
 Plugin 'kien/ctrlp.vim'
 
 " Git helper
@@ -34,6 +33,15 @@ Plugin 'tpope/vim-fugitive'
 
 " RipGrep
 Plugin 'jremmen/vim-ripgrep'
+
+" VimWiki
+Plugin 'vimwiki/vimwiki'
+let g:vimwiki_list = [
+       \ {
+	   \	'path': '~/schneider10.github.io/wiki',
+	   \	'path_html': '~/schneider10.github.io/docs',
+	   \	'auto_toc': 1},
+	   \ ]
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -53,19 +61,20 @@ map <c-k> <c-w>k
 map <c-l> <c-w>l
 map <c-h> <c-w>h
 
-" easier moving of code blocks
-vnoremap < <gv 
-vnoremap > >gv 
+" Better tabbing - Note that in insert mode you can backtab with backspace.
+set tabstop=4
+set shiftwidth=4
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
-" Easier moving between tabs
-map <Leader>n :tabprevious<CR>
-map <Leader>m :tabnext<CR>
+
+" Redo without ctrl
+nnoremap U <C-r>
 
 " map goto definition from code completion plugin
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
-" Opening up nerdtree
-map <leader>t :NERDTreeToggle<CR>
 
 " =================================
 "       Python IDE Setup
@@ -74,17 +83,6 @@ map <leader>t :NERDTreeToggle<CR>
 " Show unnecessary whitespace
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
-" Real programmers don't use TABs but spaces
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set shiftround |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix 
 
 " Enable folding
 set foldmethod=indent
@@ -112,7 +110,7 @@ set mouse=a  " on OSX press ALT and click
 set bs=2 " make backspace normal
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost ~/.vimrc source %
+autocmd! bufwritepost .vimrc source %
 
 " Showing line numbers and length
 "" set nowrap  " don't automatically wrap on load
@@ -128,12 +126,6 @@ set relativenumber number  " show relative line numbers
 " Useful settings
 set history=700
 set undolevels=700
-
-" au BufNewFile,BufRead *.js, *.html, *.css
-"     \ set tabstop=2 |
-"     \ set softtabstop=2 |
-"     \ set shiftwidth=2 |
-"     \ set shiftround
 
 " Make search case insensitive
 set incsearch
