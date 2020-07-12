@@ -1,6 +1,3 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/stephen/.oh-my-zsh"
 
@@ -20,7 +17,7 @@ ZSH_THEME="lambda"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion.
+# Hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
@@ -45,15 +42,15 @@ ZSH_THEME="lambda"
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+# Display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
 
-# Uncomment the following line if you want to disable marking untracked files
+# Disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment the following line if you want to change the command execution time
+# Comment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
@@ -112,9 +109,12 @@ alias s=google
 alias v=vim
 alias vs="vim ~/.dotfiles/.vimrc"
 alias z="vim ~/.dotfiles/.zshrc"
+alias dot="cd ~/.dotfiles; ls -a"
 alias G="cd ~/Google\ Drive"
 alias job="G; cd career; vim job_search.txt"
 alias o="open ."
+alias n="cd ~/wiki_notes/schneider10.github.io/wiki; vim index.md"
+alias e="exit"
 
 bindkey -v 
 bindkey "^[OA" up-line-or-beginning-search
@@ -125,5 +125,6 @@ export FZF_DEFAULT_COMMAND="fd . $HOME"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
-
+# if file exists, source it
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

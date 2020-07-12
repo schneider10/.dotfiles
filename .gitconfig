@@ -2,8 +2,9 @@
 	amend = !git add -A && git commit --amend --no-edit
 	co = checkout
 	c = "!git add -A && git commit -m"
-        p = !git push origin $(git rev-parse --abbrev-ref HEAD)
-        fre = "!git fetch --all && git reset --hard"
+    p = !git push origin $(git rev-parse --abbrev-ref HEAD)
+    fre = "!git fetch --all && git reset --hard"
+	d = "!git diff"
 [user]
 	name = stephenschneider
 	email = stephenschneider10@gmail.com

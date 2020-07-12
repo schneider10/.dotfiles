@@ -1,5 +1,5 @@
 set nocompatible
-filetype plugin on 
+filetype plugin on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -28,6 +28,10 @@ Plugin 'plasticboy/vim-markdown'
 " File viewer/finder
 Plugin 'kien/ctrlp.vim'
 
+" Markdown Previewer
+Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+" let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
+
 " Git helper
 Plugin 'tpope/vim-fugitive'
 
@@ -40,7 +44,8 @@ let g:vimwiki_list = [
        \ {
 	   \	'path': '~/schneider10.github.io/wiki',
 	   \	'path_html': '~/schneider10.github.io/docs',
-	   \	'auto_toc': 1},
+	   \	'auto_toc': 1,
+	   \    'syntax': 'markdown'}
 	   \ ]
 
 " All of your Plugins must be added before the following line
@@ -68,7 +73,9 @@ nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-
+" leading spaces end of line graphics
+set showbreak=↪\
+set list listchars=trail:␣
 
 " Redo without ctrl
 nnoremap U <C-r>
