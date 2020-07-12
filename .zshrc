@@ -115,8 +115,9 @@ alias job="G; cd career; vim job_search.txt"
 alias o="open ."
 alias n="cd ~/wiki_notes/schneider10.github.io/wiki; vim index.md"
 alias e="exit"
+alias rg="rg -iC3"
 
-bindkey -v 
+bindkey -v
 bindkey "^[OA" up-line-or-beginning-search
 
 export KEYTIMEOUT=1
