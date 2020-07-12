@@ -75,7 +75,7 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 " leading spaces end of line graphics
 set showbreak=↪\
-set list listchars=trail:␣
+set list listchars=tab:\ \ ,trail:␣
 
 " Redo without ctrl
 nnoremap U <C-r>
