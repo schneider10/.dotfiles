@@ -77,6 +77,9 @@ vnoremap <S-Tab> <gv
 set showbreak=↪\
 set list listchars=tab:\ \ ,trail:␣
 
+" Set file title
+set title
+
 " Redo without ctrl
 nnoremap U <C-r>
 
