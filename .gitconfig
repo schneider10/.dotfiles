@@ -1,8 +1,7 @@
 [alias]
 	amend = !git add -A && git commit --amend --no-edit
 	co = checkout
-	c = "!git add -A && git commit -m"
-	cs = "!f() { git add -A && git commit -m  \"$@\" && git show; }; f"
+	c = "!f() { git add -A && git commit -m  \"$@\" && git show; }; f"
     p = !git push origin $(git rev-parse --abbrev-ref HEAD)
     fre = "!git fetch --all && git reset --hard"
 	d = "!git diff"
