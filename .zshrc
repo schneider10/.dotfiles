@@ -122,7 +122,7 @@ bindkey "^[OA" up-line-or-beginning-search
 
 export KEYTIMEOUT=1
 
------- ## FZF Configs ## ------ 
+## ------ FZF Configs ------ ##
 export FZF_DEFAULT_COMMAND='fd'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 

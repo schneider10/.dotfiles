@@ -25,9 +25,6 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'plasticboy/vim-markdown'
 
-" File viewer/finder
-Plugin 'kien/ctrlp.vim'
-
 " Markdown Previewer
 Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 " let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
@@ -82,7 +79,7 @@ set title
 
 " Redo without ctrl
 nnoremap U <C-r>
-
+nmap <Leader-m> <Plug>MarkdownPreview
 " map goto definition from code completion plugin
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
