@@ -35,6 +35,9 @@ Plugin 'tpope/vim-fugitive'
 " RipGrep
 Plugin 'jremmen/vim-ripgrep'
 
+" Trailing Space
+Plugin 'csexton/trailertrash.vim'
+
 " VimWiki
 Plugin 'vimwiki/vimwiki'
 let g:vimwiki_list = [
@@ -70,9 +73,9 @@ nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-" leading spaces end of line graphics
+
+" show line break with arrow graphic
 set showbreak=↪\
-set list listchars=tab:\ \ ,trail:␣
 
 " Set file title
 set title
