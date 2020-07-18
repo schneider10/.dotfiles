@@ -74,6 +74,7 @@ nnoremap <S-Tab> <<_
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
+:ca md MarkdownPreview
 " show line break with arrow graphic
 set showbreak=↪\
 
