@@ -116,6 +116,20 @@ alias o="open ."
 alias n="cd ~/wiki_notes/schneider10.github.io/wiki; vim index.md"
 alias e="exit"
 alias rg="rg -iC3"
+alias todo="vim ~/Google\ Drive/to_do/todo.md"
+alias weather="s weather today"
+
+md2doc() {
+	file_name=$(echo "$1" | cut -d '.' -f1)
+	pandoc -s -o $file_name.docx "$1"
+	rm "$1"
+}
+
+doc2md() {
+	file_name=$(echo "$1" | cut -d '.' -f1)
+	pandoc -s -o $file_name.md "$1"
+	rm "$1"
+}
 
 bindkey -v
 bindkey "^[OA" up-line-or-beginning-search
