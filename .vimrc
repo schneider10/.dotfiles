@@ -1,7 +1,8 @@
 set nocompatible
 filetype plugin on
 
-" set the runtime path to include Vundle and initialize
+
+" set the path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -75,6 +76,7 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
 :ca md MarkdownPreview
+
 " show line break with arrow graphic
 set showbreak=↪\
 
@@ -83,10 +85,11 @@ set title
 
 " Redo without ctrl
 nnoremap U <C-r>
-nmap <Leader-m> <Plug>MarkdownPreview
+
 " map goto definition from code completion plugin
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
+let @q="I'\<Esc>ea'\<Esc>"
 " =================================
 "       Python IDE Setup
 " =================================
@@ -155,20 +158,25 @@ if &t_Co > 2 || has("gui_running")
   hi Search ctermfg=Black
 endif
 
+" allow dot command for block selections
+vnoremap . :normal .<CR>
 
+" Spell check!
+set spell spelllang=en_us
+hi clear SpellBad
+hi clear SpellCap
+hi clear SpellLocal
+hi clear SpellRare
+hi SpellBad cterm=underline,bold ctermfg=red
+hi SpellCap cterm=underline,bold ctermfg=red
+hi SpellLocal cterm=underline,bold ctermfg=red
+hi SpellRare cterm=underline,bold ctermfg=red
+hi SpellBad cterm=underline,bold ctermfg=red
 
 " Settings for vim-powerline
 " cd ~/.vim/bundle
 " git clone git://github.com/Lokaltog/vim-powerline.git
 "" set laststatus=2
-
-" Settings for ctrlp
-" cd ~/.vim/bundle
-" git clone https://github.com/kien/ctrlp.vim.git
-"" let g:ctrlp_max_height = 30
-"" set wildignore+=*.pyc
-"" set wildignore+=*_build/*
-"" set wildignore+=*/coverage/*
 
 
 " Settings for jedi-vim
@@ -195,3 +203,4 @@ endif
 
 "" inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 "" inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
