@@ -7,7 +7,7 @@ export ZSH="/Users/stephen/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME=awesomepanda
-# eastwood af-magic
+# eastwood af-magic awesomepanda
 #
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -93,14 +93,17 @@ alias v=vim
 alias vs="vim ~/.dotfiles/.vimrc"
 alias z="vim ~/.dotfiles/.zshrc"
 alias dot="cd ~/.dotfiles; ls -a"
+alias awsume=". awsume"
 alias G="cd ~/Google\ Drive"
 alias job="G; cd career; vim job_search.txt"
 alias o="open ."
-alias n="cd ~/wiki_notes/schneider10.github.io/wiki; vim index.md"
+alias n="cd ~/Code/schneider10.github.io/wiki; vim index.md"
 alias e="exit"
 alias rg="rg -iC3"
 alias todo="vim ~/Google\ Drive/to_do/todo.md"
 alias weather="s weather today"
+alias psh="pipenv shell"
+
 
 
 # # Convert md to docx (mainly for google drive)
@@ -148,3 +151,5 @@ _fzf_compgen_dir() {
 # if file exists, source it
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# If in home dir move to Code
+[ "$PWD" = "/Users/stephen" ] && cd Code;

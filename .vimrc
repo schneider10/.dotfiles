@@ -14,20 +14,17 @@ Plugin 'gmarik/Vundle.vim'
 
 " add all your plugins here (note older versions of Vundle
 " used Bundle instead of Plugin)
-
-Bundle 'Valloric/YouCompleteMe'
-let g:ycm_autoclose_preview_window_after_completion=1
-
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-
 " Syntax Plugins
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'dense-analysis/ale'
 
 " Markdown Previewer
 Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+
 " let g:mkdp_path_to_chrome = "open -a Google\\ Chrome"
 
 " Git helper
@@ -41,13 +38,16 @@ Plugin 'csexton/trailertrash.vim'
 
 " VimWiki
 Plugin 'vimwiki/vimwiki'
-let g:vimwiki_list = [
+ let g:vimwiki_list = [
        \ {
-	   \	'path': '~/schneider10.github.io/wiki',
-	   \	'path_html': '~/schneider10.github.io/docs',
-	   \	'auto_toc': 1,
-	   \    'syntax': 'markdown'}
-	   \ ]
+ 	   \	'path': '~/Code/schneider10.github.io/wiki',
+ 	   \	'path_html': '~/Code/schneider10.github.io/docs',
+ 	   \	'ext': '.md',
+ 	   \    'syntax': 'markdown',
+       \   	'custom_wiki2html': '~/go/bin/vimwiki-godown',
+ 	   \	'auto_toc': 1}
+ 	   \ ]
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,9 +86,7 @@ set title
 " Redo without ctrl
 nnoremap U <C-r>
 
-" map goto definition from code completion plugin
-map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
+"Example macro for quoting
 let @q="I'\<Esc>ea'\<Esc>"
 " =================================
 "       Python IDE Setup
@@ -123,23 +121,10 @@ set clipboard=unnamed
 set mouse=a  " on OSX press ALT and click
 set bs=2 " make backspace normal
 
-" Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
-
-" Showing line numbers and length
-"" set nowrap  " don't automatically wrap on load
-"" set colorcolumn=80
-"" highlight ColorColumn ctermbg=233
-
-set relativenumber number  " show relative line numbers
-
-" easier formatting of paragraphs
-"" vmap Q gq
-"" nmap Q gqap
-
 " Useful settings
 set history=700
 set undolevels=700
+set relativenumber number  " show relative line numbers
 
 " Make search case insensitive
 set incsearch
@@ -161,46 +146,5 @@ endif
 " allow dot command for block selections
 vnoremap . :normal .<CR>
 
-" Spell check!
-set spell spelllang=en_us
-hi clear SpellBad
-hi clear SpellCap
-hi clear SpellLocal
-hi clear SpellRare
-hi SpellBad cterm=underline,bold ctermfg=red
-hi SpellCap cterm=underline,bold ctermfg=red
-hi SpellLocal cterm=underline,bold ctermfg=red
-hi SpellRare cterm=underline,bold ctermfg=red
-hi SpellBad cterm=underline,bold ctermfg=red
-
-" Settings for vim-powerline
-" cd ~/.vim/bundle
-" git clone git://github.com/Lokaltog/vim-powerline.git
-"" set laststatus=2
-
-
-" Settings for jedi-vim
-" cd ~/.vim/bundle
-" git clone git://github.com/davidhalter/jedi-vim.git
-"" let g:jedi#usages_command = "<leader>z"
-"" let g:jedi#popup_on_dot = 0
-"" let g:jedi#popup_select_first = 0
-"" map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
-
-" Better navigating through omnicomplete option list
-" See http://stackoverflow.com/questions/2170023/how-to-map-keys-for-popup-menu-in-vim
-"" set completeopt=longest,menuone
-"" function! OmniPopup(action)
-""     if pumvisible()
-""         if a:action == 'j'
-""             return "\<C-N>"
-""         elseif a:action == 'k'
-""             return "\<C-P>"
-""         endif
-""     endif
-""     return a:action
-"" endfunction
-
-"" inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-"" inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
+" Automatic reloading of .vimrc
+autocmd! bufwritepost .vimrc source %
