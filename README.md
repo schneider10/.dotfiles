@@ -2,7 +2,7 @@
 
 ##### Here are some things you may want...
 
-
+#### Find a file from anywhere:
 ### FZF - Fuzzy file search - https://github.com/junegunn/fzf
 
 `brew install fzf`
@@ -22,8 +22,12 @@ _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude ".git" . "$1"
 }
 ```
+#### Find a string inside current dir:
 ### Ripgrep - Faster than grep
 `brew install ripgrep`
+- alias case insensitivity
+- surrounding lines to display
+
 
 ### Vim tooling
 
