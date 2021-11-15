@@ -27,6 +27,8 @@ _fzf_compgen_dir() {
 `brew install ripgrep`
 - alias case insensitivity
 - surrounding lines to display
+### If this is a new machine install git anyways to avoid future headaches:
+`brew install git`
 
 
 ### Vim tooling
