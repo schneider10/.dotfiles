@@ -124,7 +124,7 @@ set history=700
 set undolevels=700
 set undofile " Maintain undo history between sessions
 set undodir=~/.vim/undodir
-set number  " show line numbers
+set relativenumber number  " show relative line numbers
 
 " Make search case insensitive
 set incsearch

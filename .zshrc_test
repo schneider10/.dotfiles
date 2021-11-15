@@ -1,4 +1,5 @@
-#zmodload zsh/zprof
+#modload zsh/zprof
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/stephen/.oh-my-zsh"
 export PATH="$HOME/.poetry/bin:$PATH"
@@ -27,20 +28,41 @@ plugins=(git web-search zsh-syntax-highlighting zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-source ~/Stephen/.alias_list
+# export MANPATH="/usr/local/man:$MANPATH"
+# Example aliases
+# export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+# export PATH="/Users/stephen/Library/Python/3.8/bin:$PATH"
 
 alias python='python3'
 alias pip=/usr/local/bin/pip3
 alias shutdown="sudo shutdown -h now"
 alias restart="sudo shutdown -r now"
+
+GD='/Stephen/Google\ Drive'
+
+alias resume="cd ~$GD/career/resumes/pdf &&  open .;"
+alias todo="vim ~$GD/to\ do/todo.md"
+alias house="vim ~$GD/to\ do/house.md"
+alias flight="vim ~$GD/to\ do/flight.md"
+alias webscrape="vim ~$GD/to\ do/webscraping_presentation.md"
+alias interview="vim ~$GD/career/Interview/interview_notes.md"
+alias lease="open ~$GD/rent"
+alias organize="vim ~/Stephen/desk/docs/organize.md"
+
 alias s=google
 alias v=vim
+alias vs="vim ~/.dotfiles/.vimrc"
+alias z="vim ~/.dotfiles/.zshrc"
+alias dot="cd ~/.dotfiles; ls -a"
+alias C="cd ~/Code"
 alias o="open ."
+alias n="cd ~/Code/schneider10.github.io/wiki; vim index.md"
 alias e="exit"
 alias rg="rg -iC3"
 alias weather="s weather today"
 alias psh="pipenv shell"
 alias t="tmux"
+alias pics="open ~/Stephen/storage/pics"
 alias del="rmtrash"
 alias rm="echo Use 'del', or the full path i.e. '/bin/rm'"
 
@@ -55,6 +77,17 @@ alias dvrm="dv rm"
 alias dps='docker ps --format "table {{.Names}}: {{.Status}}\t{{.Image}}:{{.Mounts}}\t{{.Command}}\t{{.Ports}}"'
 alias drm="docker rm -f"
 alias de="docker exec -it"
+
+
+alias grok="~/Code/./ngrok http 8000"
+alias hive="tmux new -s hive_session ssh stephen@192.168.1.15"
+alias mhive="tmux new -s hive_session ssh hive@192.168.1.15"
+alias mhives="tmux new -s hive_session ssh hive"
+alias pi="ssh pi@raspberrypi.local"
+
+# Elasticsearch and Kibana
+alias elastic='~/Stephen/apps/elasticsearch_64/bin/elasticsearch'
+alias kibana='~/Stephen/apps/kibana_64/bin/kibana'
 
 
 tch () { touch $1 && echo '#!/bin/bash' >> $1  && chmod +x $1 }
